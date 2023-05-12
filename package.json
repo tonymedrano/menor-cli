@@ -1,0 +1,64 @@
+{
+  "name": "menor-cli",
+  "description": "An example CLI for ordering menor's",
+  "license": "MIT",
+  "author": "Jeroen Ouwehand",
+  "version": "0.0.3",
+  "main": "./lib/index.js",
+  "bin": {
+    "menor": "./lib/index.js"
+  },
+  "scripts": {
+    "audit": "lerna run audit --stream",
+    "audit:depcheck": "lerna run audit:depcheck --stream",
+    "audit:npm-check-updates": "npx npm-check-updates --errorLevel 1",
+    "build": "tsc -p .",
+    "create": "npm run build && npm run test",
+    "local": "sudo npm uninstall -g && sudo npm install -g && menor",
+    "npm:format": "npx prettier-package-json --write package.json",
+    "npm:upgrade": "npx npm-check-updates -iu",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "sudo npm i -g && menor"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.1.0",
+    "axios": "^0.21.1",
+    "boxen": "^4.2.0",
+    "brain.js": "^1.6.1",
+    "chalk": "^4.1.0",
+    "chalk-animation": "^1.6.0",
+    "clear": "^0.1.0",
+    "commander": "^7.1.0",
+    "figlet": "^1.5.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^8.2.0",
+    "meow": "^9.0.0",
+    "nanospinner": "^1.1.0",
+    "node-emoji": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {
+    "@types/chalk-animation": "^1.6.1",
+    "@types/clear": "^0.1.2",
+    "@types/figlet": "^1.5.6",
+    "@types/gradient-string": "^1.1.2",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^14.14.33",
+    "@types/node-emoji": "^1.8.2",
+    "@types/yargs": "^17.0.24",
+    "depcheck": "^1.4.0",
+    "lerna": "^4.0.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "keywords": [
+    "cli",
+    "nodejs",
+    "menor",
+    "typescript"
+  ]
+}
